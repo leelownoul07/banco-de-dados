@@ -1,0 +1,30 @@
+create database cadastro;
+create table pessoas (
+id int not null,
+nome varchar (30) not null,
+sexo enum('M','F'),
+cpf varchar (20),
+endereco varchar(30),
+telefone bigint (20),
+primary key (id)
+);
+
+
+
+create table usuario (
+id int not null,
+cliente varchar(20),
+empresa varchar(20),
+admini tinyint (1),
+primary key (id),
+foreign key (id) references pessoas (id)
+);
+
+create table consumo (
+id int not null,
+dia varchar (20),
+semana varchar(20),
+mes varchar(20),
+primary key (id),
+foreign key (id) references pessoas (id)
+);
